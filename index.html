@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Travel</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Cinzel', serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: black;
+      background-attachment: fixed;
+      overflow: auto;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Add keyframes for fadeIn animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+element {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+element::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+/*Remove the below line to show scrollbar on page*/
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+#container
+{
+    position:relative;
+    width:900px;
+    padding:0px;
+    margin:0px auto;
+    height:703px;
+    z-index:10;
+}
+
+/*Virtual exhibitions and events & Virtual visit*/
+.card {
+      max-width: 230px;
+      text-align: center;
+      font-family: sans-serif;
+      display: inline-block;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .price {
+      color: darkblue;
+      font-size: 22px;
+    }
+
+    h1 {
+      color: red; /* Ancient gold color */
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+
+    hr {
+      border: 1px solid #ffd700; /* Ancient gold color */
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    /* Image hover effect */
+    .i:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+</style>
+</head>
+  
+  
+<body>
+
+
+ <div style="background-color: rgba(0, 0, 0, 0.7);">
+    <br>
+    <p style="color: #ffd700; text-align: center; border-radius: 4px; font-size: 200%;">Discover one Million years of Animal History</p>
+    <hr style="height: 2px; width: 75%; border-width: 0; color: gray; background-color: gray">
+    <br><br>
+    <h1>Extinct animals</h1>
+    <br><br>
+<br><br>
+
+ <a href="category/jurassic.html" style="color: black; text-decoration: none;">
+      <div class="card" style="margin-left: 5%;">
+        <img src="images/Dino/dracorex.jpg" class="i" height="254" width="240">
+        <h1>JURASSIC-AGE</h1>
+        <hr>
+        <p class="price">65-155 M years ago</p>
+      </div>
+    </a>
+
+  <a href="flying.html" style="color: black;">
+  <div class="card" style="margin-left: 5%;">
+  <img src="flyingsquirell.jpg" class="i" height="274" width="240">
+  <h1>FLYING-ANIMALS</h1>
+  <hr>
+  <p class="price">300-10,000 years Ago</p>
+</div>
+</a>
+  
+  <a href="marine animals.html"  style="color: black;"><div class="card" style="margin-left: 5%;">
+  <img src="Dunkleosteus.jpg" class="i" height="274" width="240">
+  <h1>MARINE-ANIMALS</h1>
+  <hr>
+  <p class="price">358-382 M years</p></div></a>
+
+<a href="animals.html"  style="color: black;"><div class="card" style="margin-left: 5%;">
+  <img src="mammoth.jpg" class="i" height="274" width="240">
+  <h1>LAND-ANIMALS</h1>
+  <hr>
+  <p class="price">Extincted & About to Extinct</p></div></a>
+<br><br><br><br>
+</div>
+<br><br><br>
+</div>
+</body>
+</html>
