@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+  <title>Tryanosaurous-Rex</title>
+</head>
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+a{
+  text-decoration: none;
+  color: blue;
+}
+i{
+  text-transform: capitalize;
+}
+
+
+/*FLIP-CARD*/
+.flipper {
+  position: relative;
+}
+
+.flipper {
+  perspective: 600px;
+  -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+  
+  -webkit-transform-origin: 100% center;
+  -moz-transform-origin: 100% center;
+  -ms-transform-origin: 100% center;
+  transform-origin: 100% center;
+}
+
+.front-card, .back-card {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  
+    -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+  -o-transition: transform .6s ease-in-out;
+  -moz-transition: transform .6s ease-in-out;
+  -webkit-transition: transform .6s ease-in-out;
+  transition: transform .6s ease-in-out;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front-card {
+    z-index: 2;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.flipper.flip .front-card {
+  -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.back-card {
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+
+.flipper.flip .back-card {
+  -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+/Styling/
+.header-front {
+  background:violet;
+}
+
+.header-back {
+  background: violet;
+}
+
+.card {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.card span.card-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card .card-image {
+  position: relative;
+  overflow: hidden;
+}
+.card .card-image .header-front, .card .card-image .header-back {
+  border-radius: 2px 2px 0 0;
+  background-clip: padding-box;
+  position: relative;
+  z-index: -1;
+  width: 440px;
+  height: 160px;
+}
+.card .card-image span.card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+}
+.card .card-content {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.card .card-content p {
+  margin: 0;
+  color: inherit;
+}
+.card .card-content span.card-title {
+  line-height: 48px;
+}
+/*FLIP-CARD*/
+</style>
+<body style="background-color: #deb887;">
+
+<h2 style="text-align:center">TRYANOSAUROUS-REX</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="../images/Dino/trex1.jpg" width="300" height="250" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/Dino/trex2.jpg" width="300" height="250" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/Dino/trex3.jpg" width="300" height="250" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/Dino/trex4.jpg" width="300" height="250" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="../images/Dino/trex1.jpg" width="1200" height="700">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="../images/Dino/trex2.jpg" width="1200" height="700">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="../images/Dino/trex3.jpg" width="1200" height="700">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="../images/Dino/trex4.jpg"  width="1200" height="700">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="../images/Dino/trex1.jpg" width="200" height="150"  onclick="currentSlide(1)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Dino/trex2.jpg" width="200" height="150" onclick="currentSlide(2)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Dino/trex3.jpg" width="200" height="150" onclick="currentSlide(3)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Dino/trex4.jpg" width="200" height="150" onclick="currentSlide(4)">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<br><br><br><br>
+
+<div align="center" >
+<img src="../images/Dino/trex comparision.png" width="800" height="400" >
+</div>
+
+<figcaption style="text-align: center; font-style: italic; font-size: 30px; ">TREX VS HUMAN</figcaption>
+
+<br><br><br><br>
+
+<div align="left" style="margin-left: 0%; background-color: purple; height: 235px;">
+<img style="margin-top: 1.5%; "  src="../images/Dino/trex timeline.jpg"  width="450" height="190">
+<img  src="../images/Dino/trex map.jpg"  width="450" height="190">
+<div class="container" style="float: right; margin-right: 33%;  cursor: pointer;  vertical-align: all; position: inline-block;">
+    <div class="row" style="margin-top: 13px;">
+        <div class="flipper col-md-6 col-md-offset-3">
+            <div class="front-card card"  style="background-color: violet; height: 185px;">
+                <div class="card-image">
+                    <div class="header-front"></div>
+                    <span class="card-title">
+                        <img src="../images/Dino/fact.jpg" width="300" height="150">
+                    </span>
+                </div>
+              
+            </div>
+            <div class="back-card card"  style="background-color: violet; height: 185px;">
+                <div class="card-image">
+                    <div class="header-back">
+                    <p align="center" style="font-size: 25px; text-transform: capitalize;">A near-complete specimen of Tyrannosaurus rex, nicknamed "Stan" has been sold for a world record price of $31.8m (24.6m euros).</p>
+                </div>
+
+                </div>
+                <div class="card-content">
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<br><br><br><br>
+
+<div style="margin-left: 2%;">
+   <b style="font-size: 25px;">NAME:</b> <i style="font-size: 25px;">Tyrannosaurus (tie-RAN-oh-sore-us)</i>
+    <br><br>
+     <b style="font-size: 25px;">NAME MEANING:</b> <i style="font-size: 25px;">
+('tyrant lizard')</i>
+    <br><br>
+    <b style="font-size: 25px;">LENGTH: </b><i style="font-size: 25px;">Up to 12.0m</i>
+    <br><br>
+  
+    <b style="font-size: 25px;">WEIGHT: </b><i style="font-size: 25px;"> 7000kg </i>
+    <br><br>
+
+  <b style="font-size: 25px;">TYPE OF DINOSAUR: </b><i style="font-size: 25px;"> large theropod </i>
+    <br><br>
+
+   
+    <b style="font-size: 25px;">KINGDOM(CLASSIFICATION): </b><i style="font-size: 25px;">Animalia</i>
+    <br><br>
+     <b style="font-size: 25px;">VEGITATION:  </b><i style="font-size: 25px;">CARNIVORE </i>
+     <br><br>
+     <b style="font-size: 25px;">EATS:  </b><i style="font-size: 25px;"><a href="triceratops.html">Triceratops,</a><a href="velociraptor.html">velociraptor</a> </i>
+     <br><br>
+     <b style="font-size: 25px;">HABITAT:(PLACE OF RESIDING) </b><i style="font-size: 25px;">Canada, USA </i>
+     <br><br>
+    <b style="font-size: 25px;">AVERAGE LIFESPAN: </b><i style="font-size: 25px;"> about 28-30 years.  </i>
+    <br><br>
+    <b style="font-size: 25px;">TIME OF EXTINSION:</b> <i style="font-size: 25px;">65 million years ago </i>
+    <br><br>
+    <b style="font-size: 25px;">REASON OF EXTINSION:</b><i style="font-size: 25px;"> went extinct during the K-T mass extinction, about 65 million years ago </i>
+    <br><br>
+    <b style="font-size: 25px;">ENEMIES: </b><i style="font-size: 25px;"><a href="gigantosaurus.html" style="text-decoration: none; color: blue;">Giganotosaurus</i></a>
+    <br><br>
+</div>
+        
+
+</body>
+  <script>
+        $(document).ready(function(){
+  $('.flipper').click(function() {              
+    $(this).toggleClass('flip');
+  });
+});
+    </script>
+</html>
