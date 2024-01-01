@@ -3,56 +3,73 @@
 <head>
   <title>Flying Animals</title>
   <style>
-    body {
-      background-color: black;
+      body{
+    background-color: black;
+  }
+* {
+box-sizing: border-box;
+}
+h1 {
+text-align: center;
+}
+.outer-grid {
+display: flex;
+flex-wrap: wrap;
+padding: 0 4px;
+}
+.inner-grid {
+flex: 25%;
+max-width: 50%;
+padding: 0 4px;
+}
+.inner-grid img {
+margin-top: 8px;
+width: 100%;
+padding: 10px;
+}
+@media screen and (max-width: 800px) {
+.inner-grid {
+flex: 50%;
+max-width: 50%;
+}
+}
+@media screen and (max-width: 600px) {
+.inner-grid {
+flex: 100%;
+max-width: 100%;
+}
+}
+
+a{
+  text-decoration: none;
+}
+    .fade:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
     }
-    * {
-      box-sizing: border-box;
+
+    .fade img {
+      transition: opacity 0.5s ease-in-out;
     }
-    h1 {
-      text-align: center;
-      color: white;
+
+    .fade:hover img {
+      opacity: 0.8;
     }
-    .outer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 4px;
+
+    .fade figcaption {
+      display: none;
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
-    .inner-grid {
-      flex: 25%;
-      max-width: 50%;
-      padding: 0 4px;
-    }
-    .inner-grid img {
-      margin-top: 8px;
-      width: 100%;
-      padding: 10px;
-    }
-    @media screen and (max-width: 800px) {
-      .inner-grid {
-        flex: 50%;
-        max-width: 50%;
-      }
-    }
-    @media screen and (max-width: 600px) {
-      .inner-grid {
-        flex: 100%;
-        max-width: 100%;
-      }
-    }
-    .fade {
-      margin: 50px;
-      padding: 50px;
-      opacity: 1;
-    }
-    a {
-      text-decoration: none;
-      color: white;
-    }
-    figcaption {
-      text-align: center;
-      font-size: 20px;
-      color: white;
+
+    .fade:hover figcaption {
+      display: block;
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -77,42 +94,52 @@
   </script>
 </head>
 <body>
-  <h1>EXTINCT BIRDS</h1>
-  <div class="outer-grid">
-    <div class="inner-grid">
-      <div class="fade">
-        <a href="../Birds/flyingsquirrel.html"><img src="../images/Birds/flyingsquirell.jpg" alt="Flying Squirrel"/></a>
-        <figcaption>FLYING SQUIRREL</figcaption>
-      </div>
+  <h1 style="color: white;">EXTINT FLYING ANIMALS</h1>
 
-      <div class="fade">
-        <a href="../Birds/dodo.html"><img src="../images/Birds/dodo.jpg" alt="Dodo"/></a>
-        <figcaption>DODO</figcaption>
-      </div>
+<div class="outer-grid">
+<div class="inner-grid">
 
-      <div class="fade">
-        <a href="../Birds/argentavis.html"><img src="../images/Birds/argentavis.jpg" alt="Argentavis"/></a>
+<div class="fade">
+  <a href="../Birds/flyingsquirrel.html"><img src="../images/Birds/flyingsquirell.jpg" alt="Flying Squirrel"/></a>
+  <figcaption>FLYING SQUIRREL</figcaption>
+</div></a>
+<br><br><br>
+<div class="fade">
+  <a href="../Birds/argentavis.html"><img src="../images/Birds/argentavis.jpg" alt="Argentavis"/></a>
         <figcaption>ARGENTAVIS</figcaption>
-      </div>
+</div>
+</div>
 
-    </div>
+<!-- row 2-->
+<div class="inner-grid">
+<div class="fade">
+  <a href="../Birds/elephantbird.html"><img src="../images/Birds/elephantbird.jpg" alt="Elephant Bird"/></a>
+        <figcaption>ELEPHANT BIRD</figcaption>
+</div></a>
 
-    <div class="inner-grid">
-      <div class="fade">
+<br><br><br><br>
+
+<div class="fade">
+ <a href="../Birds/dodo.html"><img src="../images/Birds/dodo.jpg" style="background-color: darkgray;" alt="Dodo"/></a>
+  <figcaption>DODO</figcaption>
+</div>
+</div>
+
+<!-- row 3-->
+<div class="inner-grid">
+<div class="fade">
         <a href="../Birds/californiacondor.html"><img src="../images/Birds/californiacondor.jpg" alt="California Condor"/></a>
         <figcaption>CALIFORNIA CONDOR</figcaption>
-      </div>
-      <div class="fade">
-        <a href="../Birds/elephantbird.html"><img src="../images/Birds/elephantbird.jpg" alt="Elephant Bird"/></a>
-        <figcaption>ELEPHANT BIRD</figcaption>
-      </div>
-      <div class="fade">
-        <a href="../Birds/haasteagle.html"><img src="../images/Birds/haasteagle.jpg" alt="Haast Eagle"/></a>
-        <figcaption>HAAST EAGLE</figcaption>
-      </div>
-    </div>
-    
-  </div>
+</div></a>
+<br><br><br><br>
 
+<div class="fade">
+<a href="../Birds/haasteagle.html"><img src="../images/Birds/haasteagle.jpg" alt="Haast Eagle"/></a>
+        <figcaption>HAAST EAGLE</figcaption>
+</div></a>
+
+
+</div>
+</div>
 </body>
 </html>
