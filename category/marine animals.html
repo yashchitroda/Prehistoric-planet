@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+	body{
+		background-color: black;
+	}
+* {
+box-sizing: border-box;
+}
+h1 {
+text-align: center;
+}
+.outer-grid {
+display: flex;
+flex-wrap: wrap;
+padding: 0 4px;
+}
+.inner-grid {
+flex: 25%;
+max-width: 50%;
+padding: 0 4px;
+}
+.inner-grid img {
+margin-top: 8px;
+width: 100%;
+padding: 10px;
+}
+@media screen and (max-width: 800px) {
+.inner-grid {
+flex: 50%;
+max-width: 50%;
+}
+}
+@media screen and (max-width: 600px) {
+.inner-grid {
+flex: 100%;
+max-width: 100%;
+}
+}
+
+    .fade:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .fade img {
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .fade:hover img {
+      opacity: 0.8;
+    }
+
+    .fade figcaption {
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .fade:hover figcaption {
+      display: block;
+    }
+
+ a{
+  text-decoration: none;
+ }
+  </style>
+  <script src=".../images/Marine/https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(window).on("load", function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity") == 0) {
+          $(this).fadeTo(500, 1);
+        }
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity") == 1) {
+          $(this).fadeTo(500, 0);
+        }
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+
+  </script>
+
+</style>
+</head>
+<body>
+<h1 style="color: white;">EXTINT MARINE ANIMALS</h1>
+<div class="outer-grid">
+  <div class="inner-grid">
+    <div class="fade">
+      <a href="../Marine/goblinshark.html"><img src="../images/Marine/goblinshark.jpg"/>
+      <figcaption style="color: white; text-align: center;size: 50px;">GOBLIN SHARK</figcaption></a>
+    </div>
+
+    <div class="fade">
+	   <a href="../Marine/plesiosaur.html"><img src="../images/Marine/Plesiosaur.jpg"/>
+      <figcaption style="color: white; text-align: center;size: 50px;">PLESIOSAUR</figcaption>
+    </div></a>
+
+
+    <div class="fade">
+     <a href="../Marine/spermwhale.html"><img src="../images/Marine/spermwhale.jpg"/>
+      <figcaption style="color: white; text-align: center;size: 50px;">LEVIATHAN MELVILLEI</figcaption>
+    </div></a>
+  </div>
+
+<div class="inner-grid">
+<div class="fade">
+	<a href="../Marine/mosasaur.html"><img src="../images/Marine/mosasaur.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">MOSASAUR</figcaption>
+</div></a>
+
+<div class="fade">
+	<a href="../Marine/helecop.html"><img src="../images/Marine/helecop3.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">HELECOPRION-SHARK</figcaption>
+</div></a>
+</div>
+
+<div class="inner-grid">
+<div class="fade">
+	<a href="../Marine/dunkleosteus.html"><img src="../images/Marine/Dunkleosteus2.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">DUNKLEOSTEUS</figcaption></a>
+</div>
+
+<div class="fade">
+ <a href="../Marine/megalodon.html"><img src="../images/Marine/megalodon.jpg"/></a>
+  <figcaption style="color: white; text-align: center;size: 50px;">MEGALODON</figcaption>
+</div></a>
+
+<div class="fade">
+  <a href="../Marine/baskingshark.html"><img src="../images/Marine/basking.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">BASKING-SHARK</figcaption>
+</div></a>
+
+</div>
+</div>
+</body>
+</html>
