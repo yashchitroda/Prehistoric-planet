@@ -31,7 +31,7 @@
   <hr>
   <p class="price">358-382 M years</p></div></a>
 
-<a href="category/animals.html"  style="color: black;">
-  <img src="images/mammoth.jpg" class="i" height="274" width="240">
+<a href="https://yashchitroda.github.io/Prehistoric-planet/category/animals.html"  style="color: black;">
+  <img src="images/Animals/mammoth.jpg" class="i" height="274" width="240">
   <h1>LAND-ANIMALS</h1>
   <hr>
