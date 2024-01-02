@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	 body{
+    background-color: black;
+  }
+* {
+box-sizing: border-box;
+}
+h1 {
+text-align: center;
+}
+.outer-grid {
+display: flex;
+flex-wrap: wrap;
+padding: 0 4px;
+}
+.inner-grid {
+flex: 25%;
+max-width: 50%;
+padding: 0 4px;
+}
+.inner-grid img {
+margin-top: 8px;
+width: 100%;
+padding: 10px;
+}
+@media screen and (max-width: 800px) {
+.inner-grid {
+flex: 50%;
+max-width: 50%;
+}
+}
+@media screen and (max-width: 600px) {
+.inner-grid {
+flex: 100%;
+max-width: 100%;
+}
+}
+a{
+  text-decoration: none;
+}
+    .fade:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .fade img {
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .fade:hover img {
+      opacity: 0.8;
+    }
+
+    .fade figcaption {
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .fade:hover figcaption {
+      display: block;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(window).on("load", function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity") == 0) {
+          $(this).fadeTo(500, 1);
+        }
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity") == 1) {
+          $(this).fadeTo(500, 0);
+        }
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+
+  </script>
+
+</style>
+</head>
+<body>
+<h1 style="color: white;">EXTINT LAND ANIMALS</h1>
+<div class="outer-grid">
+<div class="inner-grid">
+
+<div class="fade">
+ <a href="../Animals/mammoth.html"><img src="../images/Animals/mammoth.jpg"/></a>
+	<figcaption style="color: white; text-align: center;size: 50px;">MAMMOTH</figcaption>
+</div></a>
+
+
+<div class="fade">
+	<a href="../Animals/entelodont.html"><img src="../images/Animals/entelodont.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">ENTELODONT</figcaption>
+</div>
+
+<div class="fade">
+	<a href="../Animals/giantelk.html"><img src="../images/Animals/elk.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">GIANT-ELK</figcaption>
+</div>
+
+<div class="fade">
+	<a href="../Animals/hyaenodon.html"><img src="../images/Animals/hyaenodon.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">HYAENODON</figcaption>
+</div>
+
+</div>
+<div class="inner-grid">
+<div class="fade">
+	<a href="../Animals/deodicurus.html"><img src="../images/Animals/deodicurus.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">DEODICURUS</figcaption>
+</div></a>
+
+<div class="fade">
+	<a href="../Animals/andrewsarchus.html"><img src="../images/Animals/Andrewsarchus.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">Andrewsarchus</figcaption>
+</div>
+
+<div class="fade">
+	<a href="../Animals/gaint sloth.html"><img src="../images/Animals/gaint sloth.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">GAINT GROUND SLOTH</figcaption>
+</div>
+
+<div class="fade">
+	<a href="../Animals/wollyrhino.html"><img src="../images/Animals/woollyrhino.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">WOLLY-RHINO</figcaption>
+</div></a>
+
+
+</div>
+
+<div class="inner-grid">
+<div class="fade">
+<a href="../Animals/sabertooth.html">	<img src="../images/Animals/sabertooth.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">SABERTOOTH</figcaption>
+</div></a>
+
+<div class="fade">
+<a href="../Animals/capsiantiger.html">  <img src="../images/Animals/capsiantiger.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">CAPSIAN TIGER</figcaption>
+</div></a>
+
+<div class="fade">
+	<a href="../Animals/paraceratherium.html"><img src="../images/Animals/paraceratherium.jpg"/>
+  <figcaption style="color: white; text-align: center;size: 50px;">PARACERATHERIUM</figcaption>
+</div>
+
+</div>
+</div>
+</body>
+</html>
